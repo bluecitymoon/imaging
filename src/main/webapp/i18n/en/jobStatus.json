@@ -1,0 +1,12 @@
+{
+    "imagingApp": {
+        "JobStatus" : {
+            "null": "",
+            "unknown": "unknown",
+            "starting": "starting",
+            "running": "running",
+            "stoping": "stoping",
+            "stopped": "stopped"
+        }
+    }
+}

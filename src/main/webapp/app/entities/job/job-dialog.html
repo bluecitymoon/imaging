@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myJobLabel" translate="imagingApp.job.home.createOrEditLabel">Create or edit a Job</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.job.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="imagingApp.job.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.job.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="imagingApp.job.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.job.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="imagingApp.job.lastStart" for="field_lastStart">LastStart</label>
+                <div class="input-group">
+                    <input id="field_lastStart" type="text" class="form-control" name="lastStart" uib-datepicker-popup="{{dateformat}}" ng-model="vm.job.lastStart" is-open="vm.datePickerOpenStatus.lastStart"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastStart')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="imagingApp.job.lastStop" for="field_lastStop">LastStop</label>
+                <div class="input-group">
+                    <input id="field_lastStop" type="text" class="form-control" name="lastStop" uib-datepicker-popup="{{dateformat}}" ng-model="vm.job.lastStop" is-open="vm.datePickerOpenStatus.lastStop"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastStop')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="imagingApp.job.status" for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="vm.job.status" id="field_status">
+                <option value="unknown" translate="imagingApp.JobStatus.unknown">unknown</option>
+                <option value="starting" translate="imagingApp.JobStatus.starting">starting</option>
+                <option value="running" translate="imagingApp.JobStatus.running">running</option>
+                <option value="stoping" translate="imagingApp.JobStatus.stoping">stoping</option>
+                <option value="stopped" translate="imagingApp.JobStatus.stopped">stopped</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,15 @@
+version: '2'
+services:
+    imaging-app:
+        image: imaging
+        external_links:
+            - imaging-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/imaging?useUnicode=true&characterEncoding=utf8&useSSL=false
+        ports:
+            - 8080:8080
+    imaging-mysql:
+        extends:
+            file: mysql.yml
+            service: imaging-mysql

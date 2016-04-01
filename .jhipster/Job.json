@@ -1,0 +1,31 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastStart",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastStop",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "JobStatus",
+            "fieldValues": "unknown,starting,running,stoping,stopped"
+        }
+    ],
+    "changelogDate": "20160401081837",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "job",
+    "pagination": "pagination"
+}

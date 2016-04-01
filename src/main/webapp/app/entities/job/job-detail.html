@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="imagingApp.job.detail.title">Job</span> {{vm.job.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="imagingApp.job.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.job.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="imagingApp.job.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.job.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="imagingApp.job.lastStart">LastStart</dt></dt>
+        <dd>
+            <span>{{vm.job.lastStart | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="imagingApp.job.lastStop">LastStop</dt></dt>
+        <dd>
+            <span>{{vm.job.lastStop | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="imagingApp.job.status">Status</dt></dt>
+        <dd>
+            <span translate="{{'imagingApp.JobStatus.' + vm.job.status}}">{{vm.job.status}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
